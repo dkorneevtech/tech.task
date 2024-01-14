@@ -7,9 +7,6 @@ import OrderBookTable from '../List';
 const Container = (props) => {
     const socketUrl = 'wss://api-pub.bitfinex.com/ws/2'
     const { sendMessage, readyState } = useWebSocket(socketUrl,{
-        onOpen: () => {
-          console.log('WebSocket connection established.');
-        },
         onMessage: (event) => {
           try {
             const data = JSON.parse(event.data);
